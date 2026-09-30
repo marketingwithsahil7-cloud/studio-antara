@@ -1,0 +1,36 @@
+{
+  "name": "studio-antara",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:pages": "GITHUB_PAGES=true next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "lenis": "^1.1.19",
+    "next": "^15.5.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^2.6.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/postcss": "^4.1.6",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.19.0",
+    "eslint-config-next": "^15.5.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.1.6",
+    "typescript": "^5.7.3"
+  }
+}
