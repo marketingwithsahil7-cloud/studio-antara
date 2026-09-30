@@ -10,6 +10,11 @@ const nextConfig: NextConfig = isGithubPages
   ? {
       output: "export",
       images: { unoptimized: true },
+      // Static export writes flat files (projects.html), so a direct hit or
+      // refresh on the trailing-slash form (/projects/) 404s on GitHub Pages.
+      // trailingSlash generates projects/index.html instead, which resolves
+      // both forms correctly — the documented fix for static hosts.
+      trailingSlash: true,
       basePath: `/${repoName}`,
       assetPrefix: `/${repoName}/`,
       // next/image skips its usual basePath-prefixing logic entirely when
