@@ -12,11 +12,17 @@ const nextConfig: NextConfig = isGithubPages
       images: { unoptimized: true },
       basePath: `/${repoName}`,
       assetPrefix: `/${repoName}/`,
+      // next/image skips its usual basePath-prefixing logic entirely when
+      // `unoptimized: true` (it only lives in the /_next/image URL builder),
+      // so every plain "/foo.jpg" src we pass in is missing the prefix.
+      // Expose it here and prepend it manually via lib/utils.ts#assetPath.
+      env: { NEXT_PUBLIC_BASE_PATH: `/${repoName}` },
     }
   : {
       images: {
         formats: ["image/avif", "image/webp"],
       },
+      env: { NEXT_PUBLIC_BASE_PATH: "" },
     };
 
 export default nextConfig;

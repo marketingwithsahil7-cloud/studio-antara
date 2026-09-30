@@ -4,6 +4,7 @@ import { useRef, useState, type MouseEvent } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap";
 import { services } from "@/content/services";
+import { assetPath } from "@/lib/utils";
 
 export function Services() {
   const previewRef = useRef<HTMLDivElement>(null);
@@ -94,7 +95,7 @@ export function Services() {
       >
         {hovered !== null && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={services[hovered].image} alt="" className="h-full w-full object-cover" />
+          <img src={assetPath(services[hovered].image)} alt="" className="h-full w-full object-cover" />
         )}
       </div>
     </section>

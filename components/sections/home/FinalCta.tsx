@@ -2,12 +2,13 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { site, whatsappHref } from "@/config/site";
 import { copy } from "@/content/copy";
+import { assetPath } from "@/lib/utils";
 
 export function FinalCta() {
   return (
     <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-ink px-[clamp(1.25rem,4vw,4.5rem)] py-[clamp(5.5rem,12vw,10rem)] text-cream">
       <Image
-        src="/projects/exteriors/exterior-01.jpg"
+        src={assetPath("/projects/exteriors/exterior-01.jpg")}
         alt=""
         fill
         sizes="100vw"

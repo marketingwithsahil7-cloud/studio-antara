@@ -4,6 +4,7 @@ import { useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap, Flip, registerGsap } from "@/lib/gsap";
+import { assetPath } from "@/lib/utils";
 import type { GalleryItem } from "@/content/gallery";
 
 function getThumbEl(id: string): HTMLElement | null {
@@ -210,7 +211,7 @@ export function Lightbox({
         style={{ aspectRatio: item.ratio.replace("/", " / ") }}
       >
         <Image
-          src={item.src}
+          src={assetPath(item.src)}
           alt={item.title}
           fill
           sizes="90vw"

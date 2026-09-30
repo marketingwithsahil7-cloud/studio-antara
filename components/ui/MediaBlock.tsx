@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn, assetPath } from "@/lib/utils";
 
 type Ratio = "4/5" | "16/9" | "1/1" | "3/4" | "21/9";
 
@@ -38,7 +38,7 @@ export function MediaBlock({
       className={cn("relative overflow-hidden bg-ink-2", ratioClass[ratio], className)}
     >
       <Image
-        src={src}
+        src={assetPath(src)}
         alt={alt}
         fill
         priority={priority}
